@@ -16,7 +16,24 @@ import os
 
 app = Flask(__name__)
 
-app.config["UPLOAD_FOLDER"] = "uploads"
+connection = get_connection()
+cursor = connection.cursor()
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS users(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+)
+""")
+
+connection.commit()
+connection.close()
+
+app.config["UPLOAD_FOLDER"] = os.path.join(os.getcwd(), "uploads")
+
+os.makedirs(app.config["UPLOAD_FOLDER"], exist_ok=True)
 
 app.secret_key = SECRET_KEY
 
