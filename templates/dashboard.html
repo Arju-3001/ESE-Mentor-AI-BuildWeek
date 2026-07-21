@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ESE Mentor AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="sidebar">
+
+        <h2>🎓 ESE Mentor AI</h2>
+
+        <ul>
+            <li>🏠 Dashboard</li>
+            <li>📘 Prelims</li>
+            <li>✍️ Mains</li>
+            <li>🤖 AI Tutor</li>
+            <li>📄 PDF Notes</li>
+            <li>📊 Progress</li>
+            <li>👤 Profile</li>
+        </ul>
+
+    </div>
+
+    <div class="main-content">
+
+        <div class="topbar">
+
+            <input type="text" placeholder="Search...">
+
+            <div class="user">
+                👤 {{ username }}
+
+                <a href="{{ url_for('logout') }}">
+                    <button>Logout</button>
+                </a>
+
+            </div>
+
+        </div>
+
+        <h1>Welcome to ESE Mentor AI</h1>
+
+        <p>Select Your Module</p>
+
+        <div class="dashboard">
+
+            <a href="{{ url_for('prelims') }}" class="card">
+                <h2>📘</h2>
+                <h3>Prelims</h3>
+                <p>Practice MCQs & PYQs</p>
+            </a>
+
+            <a href="{{ url_for('mains_answer') }}" class="card">
+                <h2>✍️</h2>
+                <h3>Mains Answer</h3>
+                <p>Generate UPSC/ESE Answers</p>
+            </a>
+
+            <a href="{{ url_for('ai_chat') }}" class="card">
+                <h2>🤖</h2>
+                <h3>AI Tutor</h3>
+                <p>Ask Engineering Questions</p>
+            </a>
+
+            <a href="{{ url_for('upload_pdf') }}" class="card">
+                <h2>📄</h2>
+                <h3>PDF Notes</h3>
+                <p>Upload & Ask Questions</p>
+            </a>
+
+            <a href="{{ url_for('mcq') }}" class="card">
+                <h2>📝</h2>
+                <h3>MCQ Practice</h3>
+                <p>Practice ESE Questions</p>
+            </a>
+
+            <a href="{{ url_for('logout') }}" class="card">
+                <h2>🚪</h2>
+                <h3>Logout</h3>
+                <p>Sign Out</p>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

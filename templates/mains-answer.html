@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESE Mains Answer Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>✍️ ESE Mains Answer Generator</h2>
+
+    <form method="POST">
+
+        <input
+            type="text"
+            name="question"
+            placeholder="Enter your ESE Mains Question..."
+            required
+        >
+
+        <br><br>
+
+        <button type="submit">
+            Generate Answer
+        </button>
+
+    </form>
+
+    {% if answer %}
+
+    <hr>
+
+    <h3>📖 AI Generated Answer</h3>
+
+    <pre>{{ answer }}</pre>
+
+    {% endif %}
+
+    <br>
+
+    <a href="{{ url_for('dashboard') }}">
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+
+</html>

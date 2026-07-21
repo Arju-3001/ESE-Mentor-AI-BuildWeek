@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Practice</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<h1>📘 Network Theory MCQ Practice</h1>
+
+<div class="mcq-box">
+
+    <h3>Question 1</h3>
+
+    <p>Which theorem is used to simplify a linear network?</p>
+
+    <button onclick="checkAnswer('Thevenin')">
+    Thevenin Theorem
+</button>
+
+<button onclick="checkAnswer('Norton')">
+    Norton Theorem
+</button>
+
+<button onclick="checkAnswer('Superposition')">
+    Superposition Theorem
+</button>
+
+<button onclick="checkAnswer('Maximum')">
+    Maximum Power Transfer
+</button>
+
+</div>
+ <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

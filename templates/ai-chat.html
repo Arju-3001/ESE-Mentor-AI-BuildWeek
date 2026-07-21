@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 ESE AI Tutor</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="chat-container">
+
+    <h1>🤖 ESE AI Tutor</h1>
+
+    <div class="chat-box">
+
+    <div class="ai-message">
+        <strong>🤖 AI Tutor</strong><br>
+        Hello 👋<br>
+        Ask any ESE Question.
+    </div>
+
+    {% if question %}
+
+    <div class="user-message">
+
+        <strong>👤 You</strong>
+
+        <p>{{ question }}</p>
+
+    </div>
+
+    {% endif %}
+
+    {% if answer %}
+
+    <div class="ai-message">
+
+        <strong>🤖 AI Tutor</strong>
+
+        <p>{{ answer }}</p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+    <form method="POST">
+
+        <input
+            type="text"
+            name="question"
+            placeholder="Ask your ESE Question..."
+            required>
+
+        <button type="submit">
+            Ask AI
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/dashboard">
+        <button type="button">⬅ Back to Dashboard</button>
+    </a>
+
+</div>
+
+</body>
+
+</html>
